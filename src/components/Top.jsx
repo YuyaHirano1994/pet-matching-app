@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Top = () => {
   const [val, setVal] = useState("vancouver");
@@ -6,7 +7,7 @@ const Top = () => {
   const handleChange = (e) => setVal(e.target.value);
 
   return (
-    <div className="w-screen h-screen bg-blue-300 ">
+    <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
       <div className="h-screen w-screen flex justify-center items-center">
         <div className="block w-full text-center">
           <div className="sm:text-7xl text-5xl mb-20 font-title">
@@ -27,7 +28,7 @@ const Top = () => {
               />
               <label
                 htmlFor="vancouver"
-                className="sm:w-80 w-52  block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-yellow-200 cursor-pointer hover:bg-yellow-400 peer-checked:bg-green-200"
+                className="sm:w-80 w-52  block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
               >
                 Vancouver
               </label>
@@ -43,15 +44,15 @@ const Top = () => {
               />
               <label
                 htmlFor="toronto"
-                className="sm:w-80 w-52  block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-yellow-200 cursor-pointer hover:bg-yellow-400 peer-checked:bg-green-200"
+                className="sm:w-80 w-52  block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
               >
                 Toronto
               </label>
             </div>
           </div>
           <div className="text-center">
-            <button className="w-52 text-5xl p-3 rounded-2xl text-center font-fancy bg-emerald-500 hover:bg-emerald-800">
-              START
+            <button className="w-52 text-5xl p-3 rounded-2xl text-center font-fancy bg-gradient-to-r from-lime-500 to-lime-600">
+              <Link to="/question"> START</Link>
             </button>
           </div>
         </div>

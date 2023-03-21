@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import samplePets from "./animals";
 
 const Result = () => {
   const pets = samplePets;
 
+  const { state } = useLocation();
+  const [answers, setAnswers] = useState({});
+
+  useEffect(() => {
+    setAnswers(state.state);
+  }, []);
+
+  console.log(answers);
+
   return (
-    <div className="w-screen h-screen bg-blue-300 ">
+    <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
       <div className="h-screen w-screen flex justify-center items-center">
         <div className="block w-full text-center">
           <div className="sm:text-7xl text-5xl mb-20 font-title">
@@ -37,8 +47,8 @@ const Result = () => {
             </div>
           </div>
           <div className="text-center">
-            <button className="w-52 text-5xl p-3 rounded-2xl text-center font-fancy bg-emerald-500 hover:bg-emerald-800">
-              Top
+            <button className="w-52 text-5xl p-3 rounded-2xl text-center font-fancy bg-gradient-to-r from-lime-500 to-lime-600">
+              <Link to="/">Top</Link>
             </button>
           </div>
         </div>
