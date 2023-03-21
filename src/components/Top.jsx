@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Top = () => {
-  const [val, setVal] = useState("vancouver");
+  const [location, setLocation] = useState("vancouver");
 
-  const handleChange = (e) => setVal(e.target.value);
+  const handleChange = (e) => setLocation(e.target.value);
 
   return (
     <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
@@ -24,7 +24,7 @@ const Top = () => {
                 value="vancouver"
                 className="hidden peer"
                 onChange={handleChange}
-                checked={val === "vancouver"}
+                checked={location === "vancouver"}
               />
               <label
                 htmlFor="vancouver"
@@ -40,7 +40,7 @@ const Top = () => {
                 value="toronto"
                 className="hidden peer"
                 onChange={handleChange}
-                checked={val === "toronto"}
+                checked={location === "toronto"}
               />
               <label
                 htmlFor="toronto"
@@ -52,7 +52,9 @@ const Top = () => {
           </div>
           <div className="text-center">
             <button className="w-52 text-5xl p-3 rounded-2xl text-center font-fancy bg-gradient-to-r from-lime-500 to-lime-600">
-              <Link to="/question"> START</Link>
+              <Link to={"/question"} state={{ state: location }}>
+                START
+              </Link>
             </button>
           </div>
         </div>

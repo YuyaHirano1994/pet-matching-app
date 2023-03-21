@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Question = () => {
-  const [answers, setAnswers] = useState({});
+  const { state } = useLocation();
+  const [answers, setAnswers] = useState({
+    location: "",
+    gender: "",
+    age: "",
+    size: "",
+    children: "",
+    hairLength: "",
+  });
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [checked, setChecked] = useState(true);
 
@@ -10,6 +18,12 @@ const Question = () => {
   const enabledButton =
     "w-auto text-5xl p-5 rounded-2xl text-center font-fancy bg-gradient-to-r from-lime-500 to-lime-600";
   const style = checked ? disabledButton : enabledButton;
+
+  useEffect(() => {
+    setAnswers({ ...answers, location: state.state });
+  }, []);
+
+  console.log(answers);
 
   const questions = [
     {
@@ -58,6 +72,7 @@ const Question = () => {
   return (
     <>
       <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
+        <h2>{answers?.location}</h2>
         <h2>{answers?.gender}</h2>
         <h2>{answers?.age}</h2>
         <h2>{answers?.size}</h2>
