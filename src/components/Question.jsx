@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -8,7 +9,7 @@ const Question = () => {
     gender: "",
     age: "",
     size: "",
-    children: "",
+    kids: "",
     hairLength: "",
   });
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -23,8 +24,6 @@ const Question = () => {
     setAnswers({ ...answers, location: state.state });
   }, []);
 
-  console.log(answers);
-
   const questions = [
     {
       id: 1,
@@ -35,7 +34,7 @@ const Question = () => {
     {
       id: 2,
       title: "Age?",
-      options: ["Puppy", "Young", "Adult", "Senior"],
+      options: ["Baby", "Young", "Adult", "Senior"],
       key: "age",
     },
     {
@@ -46,9 +45,9 @@ const Question = () => {
     },
     {
       id: 4,
-      title: "Good with Children?",
+      title: "Good with kids?",
       options: ["Yes", "Don't mind"],
-      key: "children",
+      key: "kids",
     },
     {
       id: 5,
@@ -59,7 +58,10 @@ const Question = () => {
   ];
 
   const handleAnswerChange = (event) => {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+    if (typeof value === "string") {
+      value = value.toLowerCase();
+    }
     setAnswers({ ...answers, [name]: value });
     setChecked(false);
   };
@@ -72,12 +74,6 @@ const Question = () => {
   return (
     <>
       <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
-        <h2>{answers?.location}</h2>
-        <h2>{answers?.gender}</h2>
-        <h2>{answers?.age}</h2>
-        <h2>{answers?.size}</h2>
-        <h2>{answers?.children}</h2>
-        <h2>{answers?.hairLength}</h2>
         <div className="h-screen w-screen flex justify-center items-center">
           <div className="block w-full text-center">
             <div className="sm:text-7xl text-5xl mb-20 font-title">
