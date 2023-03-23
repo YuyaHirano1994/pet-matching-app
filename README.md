@@ -1,6 +1,8 @@
 # Pet Matching Application
 
 https://pet-matching-app.vercel.app/
+![image](https://user-images.githubusercontent.com/110572532/227370686-e534d1b4-1e73-43e6-afdb-bed511e9ca85.png)
+
 
 ### Features
 
