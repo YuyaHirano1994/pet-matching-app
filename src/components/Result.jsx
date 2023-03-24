@@ -21,12 +21,10 @@ const Result = () => {
     answers.kids === "yes" ? (kids = 1) : (kids = 0);
 
     const fetch_url = `https://petfinder-api.onrender.com?&location=${answers.location}&gender=${answers.gender}&age=${answers.age}&size=${answers.size}&hairLength=${answers.hairLength}&kids=${kids}`;
-    console.log(fetch_url);
 
     await fetch(fetch_url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPets(data);
       })
       .catch((error) => console.error(error));
