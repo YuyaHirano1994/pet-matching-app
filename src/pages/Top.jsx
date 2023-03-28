@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 const Top = () => {
   const [location, setLocation] = useState("vancouver");
@@ -10,9 +11,7 @@ const Top = () => {
     <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
       <div className="h-screen w-screen flex justify-center items-center">
         <div className="block w-full text-center">
-          <div className="sm:text-7xl text-5xl mb-20 font-title">
-            <h1>Pet Matching App</h1>
-          </div>
+          <Header />
           <div className="sm:text-5xl text-3xl mb-5 font-question">
             <h1>Choose Your Location</h1>
           </div>
@@ -44,7 +43,7 @@ const Top = () => {
               />
               <label
                 htmlFor="toronto"
-                className="sm:w-80 w-52  block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
+                className="sm:w-80 w-48 block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
               >
                 Toronto
               </label>

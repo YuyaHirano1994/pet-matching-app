@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Header from "../components/Header";
 
 const Result = () => {
   // const pets = samplePets;
@@ -39,9 +40,7 @@ const Result = () => {
       <div className="w-screen min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
         <div className="w-screen flex justify-center items-center">
           <div className="block w-full max-w-screen-lg h-full text-center">
-            <div className="sm:text-7xl text-5xl mb-20 pt-5 font-title">
-              <h1>Pet Matching App</h1>
-            </div>
+            <Header />
             <div className="mb-10 h-3/4 flex justify-center items-center">
               {pets === null ? (
                 <>

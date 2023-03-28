@@ -1,6 +1,6 @@
-import Top from "./components/Top";
-import Question from "./components/Question";
-import Result from "./components/Result";
+import Top from "./pages/Top";
+import Question from "./pages/Question";
+import Result from "./pages/Result";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

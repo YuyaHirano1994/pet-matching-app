@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Header from "../components/Header";
 
 const Question = () => {
   const { state } = useLocation();
@@ -76,9 +77,7 @@ const Question = () => {
       <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
         <div className="h-screen w-screen flex justify-center items-center">
           <div className="block w-full text-center">
-            <div className="sm:text-7xl text-5xl mb-20 font-title">
-              <h1>Pet Matching App</h1>
-            </div>
+            <Header />
             <div className="sm:text-7xl text-5xl mb-5 font-question">
               <h2>{questions[currentQuestion].title}</h2>
             </div>
@@ -96,7 +95,7 @@ const Question = () => {
                     />
                     <label
                       htmlFor={option}
-                      className="sm:w-80 w-52 block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
+                      className="sm:w-60 w-48 block float-left sm:text-5xl text-3xl p-3 rounded-2xl text-center bg-zinc-500  cursor-pointer hover:bg-yellow-400 peer-checked:bg-yellow-400"
                     >
                       {option}
                     </label>
